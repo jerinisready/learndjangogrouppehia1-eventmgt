@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if request.user.is_authenticated %}
+        <h4>Hello {{ request.user.username }}! Welcome to homepage!!! </h4>
+        <p><a href="{% url 'sign_out' %}">Click Here</a> to Logout</p>
+    {% else %}
+        <h5>Hey User! You are not logged in till now!! </h5>
+        <p>This page is only for loggedin users! <a href="{% url 'sign_in' %}"> Click here </a> to Login </p>
+    {% endif %}
+
+
+    <footer>
+        <a href="{% url 'private_view' %}">Link to my private view</a>
+    </footer>
+{% endblock %}

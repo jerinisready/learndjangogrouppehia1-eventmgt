@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if request.user.is_authenticated %} Authenticated User {% else %} Unautnenticated {% endif %}
+    <br>
+    <br>
+
+    <h4>Hello "{{ request.user.username }}"! Here is your private settings page!!!! </h4>
+    <p> This page contains some secret information!</p>
+ {% endblock %}
+
